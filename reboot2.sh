@@ -9,7 +9,7 @@ else
 fi
 
 #Get the CPU Family
-CPUFAM=$(cat /proc/cpuinfo | grep -o "Hardware.*" | sed "s/.*Hardware\s*:\s*\(.$
+CPUFAM=$(cat /proc/cpuinfo | grep -o "Hardware.*" | sed "s/.*Hardware\s*:\s*\(.*\)/\1/")
 CPUFAM=$(echo $CPUFAM | tr '[:upper:]' '[:lower:]')
 
 # Set the desired boot partition & call reboot
